@@ -71,14 +71,20 @@ gtest_main.a : gtest-all.o gtest_main.o
 # gtest_main.a, depending on whether it defines its own main()
 # function.
 
-ship.o : $(USER_DIR)/ship.cpp $(USER_DIR)/ship.h $(GTEST_HEADERS)
+bullet.o : $(USER_DIR)/bullet.cpp $(USER_DIR)/bullet.h $(GTEST_HEADERS)
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/bullet.cpp
+
+mockscenemanager.o : $(TEST_DIR)/mocks/mockscenemanager.cpp $(TEST_DIR)/mocks/mockscenemanager.h $(GTEST_HEADERS)
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(TEST_DIR)/mocks/mockscenemanager.cpp
+
+ship.o : mockscenemanager.o $(USER_DIR)/ship.cpp $(USER_DIR)/ship.h $(GTEST_HEADERS) 
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/ship.cpp
 
 ship_unittest.o : $(TEST_DIR)/ship_unittest.cpp \
                      $(USER_DIR)/ship.h $(GTEST_HEADERS)
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(TEST_DIR)/ship_unittest.cpp
 
-ship_unittest : ship.o ship_unittest.o gtest_main.a
+ship_unittest : bullet.o mockscenemanager.o ship.o ship_unittest.o gtest_main.a
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -lpthread $^ -o $@
 run:
 	./ship_unittest

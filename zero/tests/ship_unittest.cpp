@@ -1,4 +1,5 @@
 #include "ship.h"
+#include "mocks/mockscenemanager.h"
 #include "gtest/gtest.h"
 
 class ShipTest : public ::testing::Test {
@@ -215,4 +216,5 @@ TEST_F(ShipTest, TestFireWeapon) {
 
    ship_.Fire(&sceneManager);
    EXPECT_TRUE(sceneManager.ObjectWasAdded());
+   EXPECT_STREQ(((Bullet*)sceneManager.GetLastObjectAdded())->GetClass(), "BULLET");
 }
