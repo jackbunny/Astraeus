@@ -1,5 +1,4 @@
 #include "ship.h"
-#include <iostream> 
 
 Ship::Ship(float x, float y, float acceleration, float maxSpeed,
            float rotationSpeed) {
@@ -19,7 +18,7 @@ Ship::Ship(float x, float y, float acceleration, float maxSpeed,
 
 void Ship::Fire(ISceneManager* sceneManager) {
    Bullet bullet(x_, y_);
-   sceneManager.Add(bullet);
+   sceneManager->Add(bullet);
 }
 
 float Ship::GetRotation() {

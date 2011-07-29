@@ -3,7 +3,10 @@
 
 #define _USE_MATH_DEFINES
 
+#include "iscenemanager.h"
+#include "bullet.h"
 #include <math.h>
+#include <iostream>
 
 class Ship {
 public:
