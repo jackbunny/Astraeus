@@ -29,7 +29,7 @@ CXXFLAGS += -g -Wall -Wextra
 
 # All tests produced by this Makefile.  Remember to add new tests you
 # created to the list.
-TESTS = ship_unittest
+TESTS = ship_unittest bullet_unittest kinematics_unittest
 
 # All Google Test headers.  Usually you shouldn't change this
 # definition.
@@ -41,6 +41,7 @@ GTEST_HEADERS = $(GTEST_DIR)/include/gtest/*.h \
 all : $(TESTS) run
 
 clean :
+	cd build
 	rm -f $(TESTS) gtest.a gtest_main.a *.o
 
 # Builds gtest.a and gtest_main.a.
@@ -55,36 +56,63 @@ GTEST_SRCS_ = $(GTEST_DIR)/src/*.cc $(GTEST_DIR)/src/*.h $(GTEST_HEADERS)
 # compiles fast and for ordinary users its source rarely changes.
 gtest-all.o : $(GTEST_SRCS_)
 	$(CXX) $(CPPFLAGS) -I$(GTEST_DIR) $(CXXFLAGS) -c \
-            $(GTEST_DIR)/src/gtest-all.cc
+            $(GTEST_DIR)/src/gtest-all.cc -o build/$@
 
 gtest_main.o : $(GTEST_SRCS_)
 	$(CXX) $(CPPFLAGS) -I$(GTEST_DIR) $(CXXFLAGS) -c \
-            $(GTEST_DIR)/src/gtest_main.cc
+            $(GTEST_DIR)/src/gtest_main.cc -o build/$@
 
 gtest.a : gtest-all.o
-	$(AR) $(ARFLAGS) $@ $^
+	$(AR) $(ARFLAGS) build/$@ build/gtest-all.o 
 
 gtest_main.a : gtest-all.o gtest_main.o
-	$(AR) $(ARFLAGS) $@ $^
+	$(AR) $(ARFLAGS) build/$@ build/gtest-all.o build/gtest_main.o 
 
 # Builds a sample test.  A test should link with either gtest.a or
 # gtest_main.a, depending on whether it defines its own main()
 # function.
 
 bullet.o : $(USER_DIR)/bullet.cpp $(USER_DIR)/bullet.h $(GTEST_HEADERS)
-	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/bullet.cpp
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/bullet.cpp -o build/$@
 
 mockscenemanager.o : $(TEST_DIR)/mocks/mockscenemanager.cpp $(TEST_DIR)/mocks/mockscenemanager.h $(GTEST_HEADERS)
-	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(TEST_DIR)/mocks/mockscenemanager.cpp
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(TEST_DIR)/mocks/mockscenemanager.cpp -o build/$@
 
-ship.o : mockscenemanager.o $(USER_DIR)/ship.cpp $(USER_DIR)/ship.h $(GTEST_HEADERS) 
-	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/ship.cpp
+actor.o : $(USER_DIR)/actor.cpp $(USER_DIR)/actor.h $(GTEST_HEADERS) 
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/actor.cpp -o build/$@
+
+ship.o : actor.o mockscenemanager.o $(USER_DIR)/ship.cpp $(USER_DIR)/ship.h $(GTEST_HEADERS) 
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/ship.cpp -o build/$@
+
+kinematics.o : $(USER_DIR)/kinematics.cpp $(USER_DIR)/kinematics.h \
+			$(GTEST_HEADERS)
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/kinematics.cpp -o build/$@
+
+kinematics_unittest.o : $(TEST_DIR)/kinematics_unittest.cpp \
+				$(USER_DIR)/kinematics.h $(GTEST_HEADERS)
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(TEST_DIR)/kinematics_unittest.cpp -o build/$@
 
 ship_unittest.o : $(TEST_DIR)/ship_unittest.cpp \
                      $(USER_DIR)/ship.h $(GTEST_HEADERS)
-	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(TEST_DIR)/ship_unittest.cpp
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(TEST_DIR)/ship_unittest.cpp -o build/$@
 
-ship_unittest : bullet.o mockscenemanager.o ship.o ship_unittest.o gtest_main.a
-	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -lpthread $^ -o $@
+kinematics_unittest : kinematics.o kinematics_unittest.o
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) \
+	-lpthread build/kinematics.o build/kinematics_unittest.o build/gtest_main.a -o build/$@
+
+ship_unittest : actor.o bullet.o mockscenemanager.o ship.o ship_unittest.o gtest_main.a
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) \
+	-lpthread  build/actor.o build/bullet.o build/mockscenemanager.o build/ship.o \
+	build/ship_unittest.o build/gtest_main.a -o build/$@
+
+bullet_unittest.o : $(TEST_DIR)/bullet_unittest.cpp \
+			$(USER_DIR)/bullet.h $(GTEST_HEADERS)
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(TEST_DIR)/bullet_unittest.cpp -o build/$@
+
+bullet_unittest : bullet.o bullet_unittest.o gtest_main.a
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) \
+	-lpthread build/bullet.o build/bullet_unittest.o build/gtest_main.a -o build/$@
 run:
-	./ship_unittest
+	./build/ship_unittest
+	./build/bullet_unittest
+	./build/kinematics_unittest

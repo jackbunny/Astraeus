@@ -25,7 +25,6 @@ void Actor::RotateOff() {
 }
 
 void Actor::Update(float deltaTime) {
-   float radians = rotation_ * (M_PI / 180.0f);
    float seconds = deltaTime / 1000.0f;
 
    x_ += vx_ * seconds; 
