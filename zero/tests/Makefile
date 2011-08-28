@@ -29,7 +29,7 @@ CXXFLAGS += -g -Wall -Wextra
 
 # All tests produced by this Makefile.  Remember to add new tests you
 # created to the list.
-TESTS = ship_unittest bullet_unittest kinematics_unittest
+TESTS = ship_unittest bullet_unittest kinematics_unittest actor_unittest
 
 # All Google Test headers.  Usually you shouldn't change this
 # definition.
@@ -96,7 +96,18 @@ ship_unittest.o : $(TEST_DIR)/ship_unittest.cpp \
                      $(USER_DIR)/ship.h $(GTEST_HEADERS)
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(TEST_DIR)/ship_unittest.cpp -o build/$@
 
-kinematics_unittest : kinematics.o kinematics_unittest.o
+mock_actor.o : $(USER_DIR)/mockactor.cpp $(GTEST_HEADERS) 
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/mockactor.cpp -o build/$@
+
+actor_unittest.o : $(TEST_DIR)/actor_unittest.cpp \
+                     $(USER_DIR)/actor.h $(GTEST_HEADERS)
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(TEST_DIR)/actor_unittest.cpp -o build/$@
+
+kinematics_unittest : actor.o actor_unittest.o
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) \
+	-lpthread build/actor.o build/actor_unittest.o build/gtest_main.a -o build/$@
+
+actor_unittest : kinematics.o kinematics_unittest.o
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) \
 	-lpthread build/kinematics.o build/kinematics_unittest.o build/gtest_main.a -o build/$@
 
@@ -116,3 +127,4 @@ run:
 	./build/ship_unittest
 	./build/bullet_unittest
 	./build/kinematics_unittest
+	./build/actor_unittest
