@@ -4,23 +4,21 @@
 #define _USE_MATH_DEFINES
 
 #include "actor.h"
-#include "iscenemanager.h"
 #include "bullet.h"
+#include "iscenemanager.h"
+#include "vector2.h"
 #include <math.h>
 #include <iostream>
 
 class Ship : public Actor {
+
+   static const float THRUST;
+
 public:
-   Ship(float x, float y, float acceleration, float maxSpeed,
-        float rotationSpeed);
+   Ship(Vector2 position);
    void Fire(ISceneManager* sceneManager);
    void ThrustOn();
    void ThrustOff();
-   void Update(float deltaTime);
-
-private:
-   bool thrustIsOn_;
-   float acceleration_;
 };
 
 #endif //ZERO_SRC_SHIP_H_

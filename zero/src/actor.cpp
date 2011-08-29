@@ -1,15 +1,24 @@
 #include "actor.h"
 
+const float Actor::DEFAULT_MAX_SPEED = 100.0f;
+const float Actor::DEFAULT_ROTATION_SPEED = 5.0f;
+const float Actor::DEFAULT_ROTATION_DIRECTION = 0.0f;
+const float Actor::DEFAULT_ROTATION = 0.0f;
+const Vector2 Actor::DEFAULT_POSITION(0.0f, 0.0f);
+const Vector2 Actor::DEFAULT_VELOCITY(0.0f, 0.0f);
+
+Actor::Actor() {
+   maxSpeed_ = DEFAULT_MAX_SPEED;
+   rotationSpeed_ = DEFAULT_ROTATION_SPEED;
+   rotationDirection_ = DEFAULT_ROTATION_DIRECTION;
+}
+
 float Actor::GetRotation() {
    return rotation_;
 }
 
-float Actor::GetX() {
-   return x_;
-}
-
-float Actor::GetY() {
-   return y_;
+Vector2 Actor::GetPosition() {
+   return position_;
 }
 
 void Actor::RotateLeftOn() {
@@ -25,12 +34,15 @@ void Actor::RotateOff() {
 }
 
 void Actor::Update(float deltaTime) {
-   float seconds = deltaTime / 1000.0f;
 
-   x_ += vx_ * seconds; 
-   y_ += vy_ * seconds; 
+   velocity_ = Kinematics::CalculateNewVelocity( rotation_,
+                                    velocity_,
+                                    acceleration_, 
+                                    deltaTime);
 
-   rotation_ += rotationSpeed_ * rotationDirection_ * seconds;
+   position_ += velocity_;
+
+   rotation_ += rotationSpeed_ * rotationDirection_ * (deltaTime / 1000.0f); 
    if ( rotation_ >= 360 ) {
       rotation_ = rotation_ - 360;
    } else if (rotation_ < 0) {

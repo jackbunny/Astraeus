@@ -78,15 +78,15 @@ bullet.o : $(USER_DIR)/bullet.cpp $(USER_DIR)/bullet.h $(GTEST_HEADERS)
 mockscenemanager.o : $(TEST_DIR)/mocks/mockscenemanager.cpp $(TEST_DIR)/mocks/mockscenemanager.h $(GTEST_HEADERS)
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(TEST_DIR)/mocks/mockscenemanager.cpp -o build/$@
 
-actor.o : $(USER_DIR)/actor.cpp $(USER_DIR)/actor.h $(GTEST_HEADERS) 
+kinematics.o : $(USER_DIR)/kinematics.cpp $(USER_DIR)/kinematics.h \
+			$(GTEST_HEADERS)
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/kinematics.cpp -o build/$@
+
+actor.o : kinematics.o $(USER_DIR)/actor.cpp $(USER_DIR)/actor.h $(GTEST_HEADERS) 
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/actor.cpp -o build/$@
 
 ship.o : actor.o mockscenemanager.o $(USER_DIR)/ship.cpp $(USER_DIR)/ship.h $(GTEST_HEADERS) 
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/ship.cpp -o build/$@
-
-kinematics.o : $(USER_DIR)/kinematics.cpp $(USER_DIR)/kinematics.h \
-			$(GTEST_HEADERS)
-	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/kinematics.cpp -o build/$@
 
 kinematics_unittest.o : $(TEST_DIR)/kinematics_unittest.cpp \
 				$(USER_DIR)/kinematics.h $(GTEST_HEADERS)
@@ -103,17 +103,17 @@ actor_unittest.o : $(TEST_DIR)/actor_unittest.cpp \
                      $(USER_DIR)/actor.h $(GTEST_HEADERS)
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(TEST_DIR)/actor_unittest.cpp -o build/$@
 
-kinematics_unittest : actor.o actor_unittest.o
-	$(CXX) $(CPPFLAGS) $(CXXFLAGS) \
-	-lpthread build/actor.o build/actor_unittest.o build/gtest_main.a -o build/$@
-
-actor_unittest : kinematics.o kinematics_unittest.o
+kinematics_unittest : kinematics.o kinematics_unittest.o
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) \
 	-lpthread build/kinematics.o build/kinematics_unittest.o build/gtest_main.a -o build/$@
 
-ship_unittest : actor.o bullet.o mockscenemanager.o ship.o ship_unittest.o gtest_main.a
+actor_unittest : actor.o actor_unittest.o
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) \
-	-lpthread  build/actor.o build/bullet.o build/mockscenemanager.o build/ship.o \
+	-lpthread build/kinematics.o build/actor.o build/actor_unittest.o build/gtest_main.a -o build/$@
+
+ship_unittest : kinematics.o actor.o bullet.o mockscenemanager.o ship.o ship_unittest.o gtest_main.a
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) \
+	-lpthread  build/kinematics.o build/actor.o build/bullet.o build/mockscenemanager.o build/ship.o \
 	build/ship_unittest.o build/gtest_main.a -o build/$@
 
 bullet_unittest.o : $(TEST_DIR)/bullet_unittest.cpp \
@@ -122,7 +122,7 @@ bullet_unittest.o : $(TEST_DIR)/bullet_unittest.cpp \
 
 bullet_unittest : bullet.o bullet_unittest.o gtest_main.a
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) \
-	-lpthread build/bullet.o build/bullet_unittest.o build/gtest_main.a -o build/$@
+	-lpthread build/kinematics.o build/actor.o build/bullet.o build/bullet_unittest.o build/gtest_main.a -o build/$@
 run:
 	./build/ship_unittest
 	./build/bullet_unittest

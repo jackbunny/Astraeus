@@ -1,27 +1,35 @@
 #ifndef _ZERO_SRC_ACTOR_H_
 #define _ZERO_SRC_ACTOR_H_
 
+#include "kinematics.h"
+#include "vector2.h"
 #include <math.h>
 
 class Actor {
+   static const float DEFAULT_MAX_SPEED;
+   static const float DEFAULT_ROTATION_SPEED;
+   static const float DEFAULT_ROTATION_DIRECTION;
+   static const float DEFAULT_ROTATION;
+   static const Vector2 DEFAULT_POSITION;
+   static const Vector2 DEFAULT_VELOCITY;
+
    public:
+   Actor();
+   Vector2 GetPosition();
    float GetRotation();
-   float GetX();
-   float GetY();
    void RotateLeftOn();
    void RotateRightOn();
    void RotateOff();
    void Update(float deltaTime);
 
    protected:
-   float x_;
-   float y_;
-   float rotation_; 
+   Vector2 position_;
+   float rotation_;
    float rotationDirection_;
-   float rotationSpeed_;
-   float vx_;
-   float vy_;
+   Vector2 velocity_;
+   float acceleration_;
    float maxSpeed_;
+   float rotationSpeed_;
 };
 
 #endif //END _ZERO_SRC_ACTOR_H_

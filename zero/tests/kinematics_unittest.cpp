@@ -19,8 +19,6 @@ TEST(KinematicsTest, TestWithAutomatedData)
    std::ifstream file ( "kinematicsdata.csv" );
    std::string value;
    while ( file.good() ) {
-        float x = GetNextVal( &file );
-        float y = GetNextVal( &file );
         float rotation = GetNextVal( &file );
         float vx_i = GetNextVal( &file );
         float vy_i = GetNextVal( &file );
@@ -28,8 +26,7 @@ TEST(KinematicsTest, TestWithAutomatedData)
         float time = GetNextVal( &file );
         float vx_f = GetNextVal( &file );
         float vy_f = GetLastValOfLine( &file );
-        Vector2 result = Kinematics::Calculate( Vector2(x, y),
-                                                rotation,
+        Vector2 result = Kinematics::CalculateNewVelocity( rotation,
                                                 Vector2(vx_i, vy_i),
                                                 acceleration,
                                                 time );

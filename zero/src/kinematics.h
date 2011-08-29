@@ -8,8 +8,7 @@
 
 class Kinematics {
    public:
-      static Vector2 Calculate( Vector2 position,
-                                float rotation,
+      static Vector2 CalculateNewVelocity( float rotation,
                                 Vector2 velocity, 
                                 float acceleration,
                                 float timeInMilliseconds);

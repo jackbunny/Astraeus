@@ -1,14 +1,120 @@
+		Session.vim	/^inoremap <silent> 	 =TriggerSnippet()$/;"	m
+		Session.vim	/^inoremap <silent> 	 =ShowAvailableSnips()$/;"	m
+	Session.vim	/^inoremap <expr>  omni#cpp#maycomplete#Complete()$/;"	m
 !_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
 !_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
 !_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+.	Session.vim	/^inoremap <expr> . omni#cpp#maycomplete#Dot()$/;"	m
+0	Session.vim	/^normal! 0$/;"	m
+06l	Session.vim	/^normal! 06l$/;"	m
+:	Session.vim	/^inoremap <expr> : omni#cpp#maycomplete#Scope()$/;"	m
+<C-F12>	Session.vim	/^map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .$/;"	m
+<F12>	Session.vim	/^nmap <silent> <F12> <Plug>ToggleProject$/;"	m
+<F8>	Session.vim	/^noremap <silent> <F8> :NERDTreeToggle$/;"	m
+<F9>	Session.vim	/^noremap <silent> <F9> :TagbarToggle$/;"	m
+<Plug>NetrwBrowseX	Session.vim	/^nnoremap <silent> <Plug>NetrwBrowseX :call netrw#NetrwBrowseX(expand("<cWORD>"),0)$/;"	m
+<S-Tab>	Session.vim	/^inoremap <silent> <S-Tab> =BackwardsSnippet()$/;"	m
+>	Session.vim	/^inoremap <expr> > omni#cpp#maycomplete#Arrow()$/;"	m
+Add	mocks/mockscenemanager.cpp	/^void MockSceneManager::Add(Bullet bullet) {$/;"	f	class:MockSceneManager	signature:(Bullet bullet)
+Add	mocks/mockscenemanager.h	/^   virtual void Add(Bullet bullet);$/;"	p	class:MockSceneManager	access:public	signature:(Bullet bullet)
+BulletTest	bullet_unittest.cpp	/^   BulletTest() : bullet_(testX_, testY_, direction_) {}$/;"	f	class:BulletTest	access:protected	signature:()
+BulletTest	bullet_unittest.cpp	/^class BulletTest : public ::testing::Test {$/;"	c	file:	inherits:::testing::Test
+BulletTest::BulletTest	bullet_unittest.cpp	/^   BulletTest() : bullet_(testX_, testY_, direction_) {}$/;"	f	class:BulletTest	access:protected	signature:()
+BulletTest::bullet_	bullet_unittest.cpp	/^   Bullet bullet_;$/;"	m	class:BulletTest	file:	access:protected
+BulletTest::direction_	bullet_unittest.cpp	/^   static const float direction_;$/;"	m	class:BulletTest	file:	access:protected
+BulletTest::direction_	bullet_unittest.cpp	/^const float BulletTest::direction_ = 100.0f;$/;"	m	class:BulletTest	file:
+BulletTest::speed_	bullet_unittest.cpp	/^   static const float speed_;$/;"	m	class:BulletTest	file:	access:protected
+BulletTest::speed_	bullet_unittest.cpp	/^const float BulletTest::speed_ = 100.0f;$/;"	m	class:BulletTest	file:
+BulletTest::testX_	bullet_unittest.cpp	/^   static const float testX_;$/;"	m	class:BulletTest	file:	access:protected
+BulletTest::testX_	bullet_unittest.cpp	/^const float BulletTest::testX_ = 100.0f;$/;"	m	class:BulletTest	file:
+BulletTest::testY_	bullet_unittest.cpp	/^   static const float testY_;$/;"	m	class:BulletTest	file:	access:protected
+BulletTest::testY_	bullet_unittest.cpp	/^const float BulletTest::testY_ = 100.0f;$/;"	m	class:BulletTest	file:
 GTEST_DIR	Makefile	/^GTEST_DIR = ..\/..\/..\/tools\/gtest$/;"	m
 GTEST_HEADERS	Makefile	/^GTEST_HEADERS = $(GTEST_DIR)\/include\/gtest\/*.h \\$/;"	m
 GTEST_SRCS_	Makefile	/^GTEST_SRCS_ = $(GTEST_DIR)\/src\/*.cc $(GTEST_DIR)\/src\/*.h $(GTEST_HEADERS)$/;"	m
-TEST	ship_unittest.cpp	/^TEST(ConstructorTest, WithParameters) {$/;"	f	signature:(ConstructorTest, WithParameters)
-TEST	ship_unittest.cpp	/^TEST(ThrustTest, ThrustOnWorks ) {$/;"	f	signature:(ThrustTest, ThrustOnWorks )
-TESTS	Makefile	/^TESTS = ship_unittest$/;"	m
+GetAbsolute	ship_unittest.cpp	/^float GetAbsolute(float val) {$/;"	f	signature:(float val)
+GetLastObjectAdded	mocks/mockscenemanager.cpp	/^void* MockSceneManager::GetLastObjectAdded() {$/;"	f	class:MockSceneManager	signature:()
+GetLastObjectAdded	mocks/mockscenemanager.h	/^   void* GetLastObjectAdded();$/;"	p	class:MockSceneManager	access:public	signature:()
+GetLastValOfLine	kinematics_unittest.cpp	/^float GetLastValOfLine(std::ifstream* f) {$/;"	f	signature:(std::ifstream* f)
+GetNextVal	kinematics_unittest.cpp	/^float GetNextVal(std::ifstream* f) {$/;"	f	signature:(std::ifstream* f)
+MockSceneManager	mocks/mockscenemanager.h	/^class MockSceneManager : public ISceneManager {$/;"	c	inherits:ISceneManager
+MockSceneManager::Add	mocks/mockscenemanager.cpp	/^void MockSceneManager::Add(Bullet bullet) {$/;"	f	class:MockSceneManager	signature:(Bullet bullet)
+MockSceneManager::Add	mocks/mockscenemanager.h	/^   virtual void Add(Bullet bullet);$/;"	p	class:MockSceneManager	access:public	signature:(Bullet bullet)
+MockSceneManager::GetLastObjectAdded	mocks/mockscenemanager.cpp	/^void* MockSceneManager::GetLastObjectAdded() {$/;"	f	class:MockSceneManager	signature:()
+MockSceneManager::GetLastObjectAdded	mocks/mockscenemanager.h	/^   void* GetLastObjectAdded();$/;"	p	class:MockSceneManager	access:public	signature:()
+MockSceneManager::ObjectWasAdded	mocks/mockscenemanager.cpp	/^bool MockSceneManager::ObjectWasAdded() {$/;"	f	class:MockSceneManager	signature:()
+MockSceneManager::ObjectWasAdded	mocks/mockscenemanager.h	/^   bool ObjectWasAdded();$/;"	p	class:MockSceneManager	access:public	signature:()
+MockSceneManager::last_object_	mocks/mockscenemanager.h	/^      void* last_object_;$/;"	m	class:MockSceneManager	access:private
+ObjectWasAdded	mocks/mockscenemanager.cpp	/^bool MockSceneManager::ObjectWasAdded() {$/;"	f	class:MockSceneManager	signature:()
+ObjectWasAdded	mocks/mockscenemanager.h	/^   bool ObjectWasAdded();$/;"	p	class:MockSceneManager	access:public	signature:()
+SessionLoad	Session.vim	/^let SessionLoad = 1$/;"	v
+SetUp	ship_unittest.cpp	/^      virtual void SetUp() {$/;"	f	class:ShipTest	access:protected	signature:()
+ShipTest	ship_unittest.cpp	/^      ShipTest() : ship_(testX_, testY_, testAccel_, testMaxSpeed_, testRotationSpeed_) {}$/;"	f	class:ShipTest	access:protected	signature:()
+ShipTest	ship_unittest.cpp	/^class ShipTest : public ::testing::Test {$/;"	c	file:	inherits:::testing::Test
+ShipTest::SetUp	ship_unittest.cpp	/^      virtual void SetUp() {$/;"	f	class:ShipTest	access:protected	signature:()
+ShipTest::ShipTest	ship_unittest.cpp	/^      ShipTest() : ship_(testX_, testY_, testAccel_, testMaxSpeed_, testRotationSpeed_) {}$/;"	f	class:ShipTest	access:protected	signature:()
+ShipTest::elapsedMilliseconds_	ship_unittest.cpp	/^      float elapsedMilliseconds_;$/;"	m	class:ShipTest	file:	access:protected
+ShipTest::ship_	ship_unittest.cpp	/^      Ship ship_;$/;"	m	class:ShipTest	file:	access:protected
+ShipTest::testAccel_	ship_unittest.cpp	/^      static const float testAccel_;$/;"	m	class:ShipTest	file:	access:protected
+ShipTest::testAccel_	ship_unittest.cpp	/^const float ShipTest::testAccel_ = 2.0f;$/;"	m	class:ShipTest	file:
+ShipTest::testMaxSpeed_	ship_unittest.cpp	/^      static const float testMaxSpeed_;$/;"	m	class:ShipTest	file:	access:protected
+ShipTest::testMaxSpeed_	ship_unittest.cpp	/^const float ShipTest::testMaxSpeed_ = 10.0f;$/;"	m	class:ShipTest	file:
+ShipTest::testRotationSpeed_	ship_unittest.cpp	/^      static const float testRotationSpeed_;$/;"	m	class:ShipTest	file:	access:protected
+ShipTest::testRotationSpeed_	ship_unittest.cpp	/^const float ShipTest::testRotationSpeed_ = 5.0f;$/;"	m	class:ShipTest	file:
+ShipTest::testX_	ship_unittest.cpp	/^      static const float testX_;$/;"	m	class:ShipTest	file:	access:protected
+ShipTest::testX_	ship_unittest.cpp	/^const float ShipTest::testX_ = 100.0f;$/;"	m	class:ShipTest	file:
+ShipTest::testY_	ship_unittest.cpp	/^      static const float testY_;$/;"	m	class:ShipTest	file:	access:protected
+ShipTest::testY_	ship_unittest.cpp	/^const float ShipTest::testY_ = 100.0f;$/;"	m	class:ShipTest	file:
+TEST	kinematics_unittest.cpp	/^TEST(KinematicsTest, TestWithAutomatedData)$/;"	f	signature:(KinematicsTest, TestWithAutomatedData)
+TESTS	Makefile	/^TESTS = ship_unittest bullet_unittest kinematics_unittest$/;"	m
 TEST_DIR	Makefile	/^TEST_DIR = .$/;"	m
+TEST_F	bullet_unittest.cpp	/^TEST_F(BulletTest, ConstructorTest) {$/;"	f	signature:(BulletTest, ConstructorTest)
+TEST_F	bullet_unittest.cpp	/^TEST_F(BulletTest, MovementTest) {$/;"	f	signature:(BulletTest, MovementTest)
+TEST_F	ship_unittest.cpp	/^TEST_F(ShipTest, ConstructorWorks) {$/;"	f	signature:(ShipTest, ConstructorWorks)
+TEST_F	ship_unittest.cpp	/^TEST_F(ShipTest, RotatesChangeDirection) {$/;"	f	signature:(ShipTest, RotatesChangeDirection)
+TEST_F	ship_unittest.cpp	/^TEST_F(ShipTest, RotationGoesCorrectDirection) {$/;"	f	signature:(ShipTest, RotationGoesCorrectDirection)
+TEST_F	ship_unittest.cpp	/^TEST_F(ShipTest, RotationIsInRange) {$/;"	f	signature:(ShipTest, RotationIsInRange)
+TEST_F	ship_unittest.cpp	/^TEST_F(ShipTest, RotationOffWorks) {$/;"	f	signature:(ShipTest, RotationOffWorks)
+TEST_F	ship_unittest.cpp	/^TEST_F(ShipTest, RotationScalesWithTime) {$/;"	f	signature:(ShipTest, RotationScalesWithTime)
+TEST_F	ship_unittest.cpp	/^TEST_F(ShipTest, ShipMovesInCorrectDirection) {$/;"	f	signature:(ShipTest, ShipMovesInCorrectDirection)
+TEST_F	ship_unittest.cpp	/^TEST_F(ShipTest, TestFireWeapon) {$/;"	f	signature:(ShipTest, TestFireWeapon)
+TEST_F	ship_unittest.cpp	/^TEST_F(ShipTest, ThrustOffWorks) {$/;"	f	signature:(ShipTest, ThrustOffWorks)
+TEST_F	ship_unittest.cpp	/^TEST_F(ShipTest, ThrustOnMovesShip) {$/;"	f	signature:(ShipTest, ThrustOnMovesShip)
+TEST_F	ship_unittest.cpp	/^TEST_F(ShipTest, ThrustScalesWithTime) { $/;"	f	signature:(ShipTest, ThrustScalesWithTime)
+Tree	Session.vim	/^cnoreabbr Tree NERDTree$/;"	m
 USER_DIR	Makefile	/^USER_DIR = ..\/src$/;"	m
+ZERO_TESTS_MOCKS_MOCKSCENEMANAGER_H_	mocks/mockscenemanager.h	2;"	d
+bullet_	bullet_unittest.cpp	/^   Bullet bullet_;$/;"	m	class:BulletTest	file:	access:protected
+direction_	bullet_unittest.cpp	/^   static const float direction_;$/;"	m	class:BulletTest	file:	access:protected
+direction_	bullet_unittest.cpp	/^const float BulletTest::direction_ = 100.0f;$/;"	m	class:BulletTest	file:
+elapsedMilliseconds_	ship_unittest.cpp	/^      float elapsedMilliseconds_;$/;"	m	class:ShipTest	file:	access:protected
+gx	Session.vim	/^nmap gx <Plug>NetrwBrowseX$/;"	m
+last_object_	mocks/mockscenemanager.h	/^      void* last_object_;$/;"	m	class:MockSceneManager	access:private
+s:cpo_save	Session.vim	/^let s:cpo_save=&cpo$/;"	v
+s:l	Session.vim	/^let s:l = 10 - ((9 * winheight(0) + 10) \/ 21)$/;"	v
+s:l	Session.vim	/^let s:l = 26 - ((20 * winheight(0) + 10) \/ 21)$/;"	v
+s:l	Session.vim	/^let s:l = 54 - ((19 * winheight(0) + 10) \/ 21)$/;"	v
+s:so_save	Session.vim	/^let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0$/;"	v
+s:sx	Session.vim	/^let s:sx = expand("<sfile>:p:r")."x.vim"$/;"	v
+s:wipebuf	Session.vim	/^  let s:wipebuf = bufnr('%')$/;"	v
+ship_	ship_unittest.cpp	/^      Ship ship_;$/;"	m	class:ShipTest	file:	access:protected
+speed_	bullet_unittest.cpp	/^   static const float speed_;$/;"	m	class:BulletTest	file:	access:protected
+speed_	bullet_unittest.cpp	/^const float BulletTest::speed_ = 100.0f;$/;"	m	class:BulletTest	file:
+testAccel_	ship_unittest.cpp	/^      static const float testAccel_;$/;"	m	class:ShipTest	file:	access:protected
+testAccel_	ship_unittest.cpp	/^const float ShipTest::testAccel_ = 2.0f;$/;"	m	class:ShipTest	file:
+testMaxSpeed_	ship_unittest.cpp	/^      static const float testMaxSpeed_;$/;"	m	class:ShipTest	file:	access:protected
+testMaxSpeed_	ship_unittest.cpp	/^const float ShipTest::testMaxSpeed_ = 10.0f;$/;"	m	class:ShipTest	file:
+testRotationSpeed_	ship_unittest.cpp	/^      static const float testRotationSpeed_;$/;"	m	class:ShipTest	file:	access:protected
+testRotationSpeed_	ship_unittest.cpp	/^const float ShipTest::testRotationSpeed_ = 5.0f;$/;"	m	class:ShipTest	file:
+testX_	bullet_unittest.cpp	/^   static const float testX_;$/;"	m	class:BulletTest	file:	access:protected
+testX_	bullet_unittest.cpp	/^const float BulletTest::testX_ = 100.0f;$/;"	m	class:BulletTest	file:
+testX_	ship_unittest.cpp	/^      static const float testX_;$/;"	m	class:ShipTest	file:	access:protected
+testX_	ship_unittest.cpp	/^const float ShipTest::testX_ = 100.0f;$/;"	m	class:ShipTest	file:
+testY_	bullet_unittest.cpp	/^   static const float testY_;$/;"	m	class:BulletTest	file:	access:protected
+testY_	bullet_unittest.cpp	/^const float BulletTest::testY_ = 100.0f;$/;"	m	class:BulletTest	file:
+testY_	ship_unittest.cpp	/^      static const float testY_;$/;"	m	class:ShipTest	file:	access:protected
+testY_	ship_unittest.cpp	/^const float ShipTest::testY_ = 100.0f;$/;"	m	class:ShipTest	file:
+zt	Session.vim	/^normal! zt$/;"	m

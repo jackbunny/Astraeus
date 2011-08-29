@@ -5,37 +5,59 @@
 
 class ActorTest : public ::testing::Test {
    protected:
-      static const Vector2 testPosition_;
-      static const Vector2 testVelocity_;
-      static const float testRotation_;
       MockActor mockActor_;
-      ActorTest() : mockActor_( testPosition_,
-                              testVelocity_,
-                              testRotation_ ) { };
 };
 
-const Vector2 ActorTest::testPosition_(0.0f, 0.0f);
-const Vector2 ActorTest::testVelocity_(0.0f, 0.0f);
-
-TEST_F( ActorTest, TestGetRotation ) {
-   EXPECT_EQ( testRotation_, mockActor_.GetRotation());
-}
-
-TEST_F( ActorTest, TestGetPosition ) {
-   EXPECT_EQ( testPosition_, mockActor_.GetPosition() );
-}
-
 TEST_F( ActorTest, TestRotate ) {
-   mockActor_.RotateRightOn();
+   float r0 = mockActor_.GetRotation();
+   mockActor_.RotateLeftOn();
    mockActor_.Update(1000.0f);
    float r1 = mockActor_.GetRotation();
-   EXPECT_LT( testRotation_, r1 );
+   EXPECT_LT( r0, r1 );
    mockActor_.RotateOff();
    mockActor_.Update(1000.0f);
    EXPECT_EQ( r1, mockActor_.GetRotation() );
-   mockActor_.RotateLeftOn();
+   mockActor_.RotateRightOn();
    mockActor_.Update(500.0f);
    EXPECT_GT( r1, mockActor_.GetRotation() );
 }
 
+TEST_F(ActorTest, RotationIsInRange) {
+   float initialRotation = mockActor_.GetRotation();
+   float rotation = initialRotation + 1;
+   bool pastZero = 0;
+   mockActor_.RotateRightOn();
+   while (!pastZero && (rotation > initialRotation)) {
+      ASSERT_GE(rotation, 0);
+      ASSERT_LT(rotation, 360);
+      mockActor_.Update(1000.0f);
+      float lastRotation = rotation;
+      rotation = mockActor_.GetRotation();
+      if ( rotation < lastRotation ) {
+         pastZero = 1;
+      }
+   }
+}
+
+TEST_F(ActorTest, RotationOffWorks) {
+   float firstRotation = mockActor_.GetRotation();
+   mockActor_.RotateLeftOn();
+   mockActor_.Update(1000.0f);
+   float secondRotation = mockActor_.GetRotation();
+   mockActor_.RotateOff(); mockActor_.Update(1000.0f); float thirdRotation = mockActor_.GetRotation();
+
+   EXPECT_NE(firstRotation, secondRotation);
+   EXPECT_EQ(secondRotation, thirdRotation);
+}
+
+TEST_F(ActorTest, RotationScalesWithTime) {
+   float firstRotation = mockActor_.GetRotation();
+   mockActor_.RotateLeftOn();
+   mockActor_.Update(1000.0f);
+   float secondRotation = mockActor_.GetRotation();
+   mockActor_.Update(2000.0f);
+   float thirdRotation = mockActor_.GetRotation();
+
+   EXPECT_LT(secondRotation - firstRotation, thirdRotation - secondRotation);
+}
 

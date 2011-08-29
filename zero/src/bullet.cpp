@@ -1,6 +1,8 @@
 #include "bullet.h"
 
-Bullet::Bullet(float x, float y, float direction) {
+Bullet::Bullet(Vector2 position, float direction) {
+   position_ = position;
+   rotation_ = direction;
 }
 
 const char* Bullet::GetClass() {

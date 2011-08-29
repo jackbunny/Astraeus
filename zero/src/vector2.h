@@ -1,11 +1,38 @@
-#ifndef _ASTRAEUS_ZERO_VECTOR2_
-#define _ASTRAEUS_ZERO_VECTOR2_ 
+#ifndef _ZERO_SRC_VECTOR2_
+#define _ZERO_SRC_VECTOR2_ 
 
 struct Vector2 {
   float x, y;
+
+  Vector2() {
+     this->x = 0.0f;
+     this->y = 0.0f;
+  }
+
   Vector2(float x, float y) {
      this->x = x;
      this->y = y;
+  }
+
+  Vector2 operator+(Vector2& v2) {
+     return Vector2(x + v2.x, y + v2.y);     
+  }
+
+  void operator+=(Vector2& v2) {
+     x += v2.x;
+     y += v2.y;
+  }
+
+  friend bool operator==(const Vector2& v1, const Vector2& v2) {
+     return ( (v1.x==v2.x) && (v1.y==v2.y) );
+  }
+
+  friend bool operator!=(const Vector2& v1, const Vector2& v2) {
+     return ( !(v1==v2) );
+  }
+
+  Vector2 operator-(Vector2& v2) {
+     return Vector2(x - v2.x, y - v2.y);
   }
 };
 
