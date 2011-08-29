@@ -11,11 +11,10 @@ class BulletTest : public ::testing::Test {
    Bullet bullet_;
 };
 
-const Vector2 BulletTest::testPosition_(100.0f, 100.0f);
+const Vector2 BulletTest::testPosition_(200.0f, 100.0f);
 const float BulletTest::direction_ = 100.0f;
 const float BulletTest::speed_ = 100.0f;
 
 TEST_F(BulletTest, ConstructorTest) {
    EXPECT_EQ(bullet_.GetPosition(), BulletTest::testPosition_);
 }
-

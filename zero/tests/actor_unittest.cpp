@@ -22,6 +22,16 @@ TEST_F( ActorTest, TestRotate ) {
    EXPECT_GT( r1, mockActor_.GetRotation() );
 }
 
+TEST_F(ActorTest, CanDetectCollision) {
+   MockActor collideActor;
+   EXPECT_TRUE(mockActor_.Intersects(&collideActor));
+}
+
+TEST_F(ActorTest, CanDetectNoCollision) {
+   MockActor collideActor(Vector2(20.0f, 20.0f));
+   EXPECT_FALSE(mockActor_.Intersects(&collideActor));
+}
+
 TEST_F(ActorTest, RotationIsInRange) {
    float initialRotation = mockActor_.GetRotation();
    float rotation = initialRotation + 1;

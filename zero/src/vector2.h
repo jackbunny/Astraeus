@@ -14,24 +14,24 @@ struct Vector2 {
      this->y = y;
   }
 
-  Vector2 operator+(Vector2& v2) {
+  Vector2 operator+(Vector2 const& v2) {
      return Vector2(x + v2.x, y + v2.y);     
   }
 
-  void operator+=(Vector2& v2) {
+  void operator+=(Vector2 const& v2) {
      x += v2.x;
      y += v2.y;
   }
 
-  friend bool operator==(const Vector2& v1, const Vector2& v2) {
+  friend bool operator==(Vector2 const& v1, Vector2 const& v2) {
      return ( (v1.x==v2.x) && (v1.y==v2.y) );
   }
 
-  friend bool operator!=(const Vector2& v1, const Vector2& v2) {
+  friend bool operator!=(Vector2 const& v1, Vector2 const& v2) {
      return ( !(v1==v2) );
   }
 
-  Vector2 operator-(Vector2& v2) {
+  Vector2 operator-(Vector2 const& v2) {
      return Vector2(x - v2.x, y - v2.y);
   }
 };

@@ -2,7 +2,7 @@
 
 const float Actor::DEFAULT_MAX_SPEED = 100.0f;
 const float Actor::DEFAULT_ROTATION_SPEED = 5.0f;
-const float Actor::DEFAULT_ROTATION_DIRECTION = 0.0f;
+const char Actor::DEFAULT_ROTATION_DIRECTION = 0;
 const float Actor::DEFAULT_ROTATION = 0.0f;
 const Vector2 Actor::DEFAULT_POSITION(0.0f, 0.0f);
 const Vector2 Actor::DEFAULT_VELOCITY(0.0f, 0.0f);
@@ -13,11 +13,16 @@ Actor::Actor() {
    rotationDirection_ = DEFAULT_ROTATION_DIRECTION;
 }
 
+bool Actor::Intersects(Actor const* actor)
+{
+   return position_ == actor->GetPosition();
+}
+
 float Actor::GetRotation() {
    return rotation_;
 }
 
-Vector2 Actor::GetPosition() {
+Vector2 Actor::GetPosition() const {
    return position_;
 }
 

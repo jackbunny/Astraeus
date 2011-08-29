@@ -8,14 +8,15 @@
 class Actor {
    static const float DEFAULT_MAX_SPEED;
    static const float DEFAULT_ROTATION_SPEED;
-   static const float DEFAULT_ROTATION_DIRECTION;
+   static const char DEFAULT_ROTATION_DIRECTION;
    static const float DEFAULT_ROTATION;
    static const Vector2 DEFAULT_POSITION;
    static const Vector2 DEFAULT_VELOCITY;
 
    public:
    Actor();
-   Vector2 GetPosition();
+   bool Intersects(const Actor* actor);
+   Vector2 GetPosition() const;
    float GetRotation();
    void RotateLeftOn();
    void RotateRightOn();
@@ -25,7 +26,7 @@ class Actor {
    protected:
    Vector2 position_;
    float rotation_;
-   float rotationDirection_;
+   char rotationDirection_;
    Vector2 velocity_;
    float acceleration_;
    float maxSpeed_;
