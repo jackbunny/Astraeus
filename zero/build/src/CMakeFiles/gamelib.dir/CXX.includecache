@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/actor.h
+kinematics.h
+../include/kinematics.h
+vector2.h
+../include/vector2.h
+math.h
+-
+
+../include/kinematics.h
+vector2.h
+../include/vector2.h
+math.h
+-
+
+../include/vector2.h
+
+/home/jackbunny/code/Astraeus/zero/src/actor.cpp
+actor.h
+/home/jackbunny/code/Astraeus/zero/src/actor.h
+

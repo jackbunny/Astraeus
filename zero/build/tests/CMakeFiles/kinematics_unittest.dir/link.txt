@@ -1,0 +1,1 @@
+/usr/bin/c++      CMakeFiles/kinematics_unittest.dir/kinematics_unittest.cpp.o  -o bin/kinematics_unittest -rdynamic ../src/lib/libgamelib.a mocks/lib/libmock.a lib/gtest/lib/libgtest.a lib/gtest/lib/libgtest_main.a lib/gtest/lib/libgtest.a -lpthread 

@@ -1,0 +1,2 @@
+/usr/bin/ar cr lib/libmock.a  CMakeFiles/mock.dir/mockscenemanager.cpp.o CMakeFiles/mock.dir/mockactor.cpp.o
+/usr/bin/ranlib lib/libmock.a

@@ -1,0 +1,1 @@
+/usr/bin/c++      CMakeFiles/bullet_unittest.dir/bullet_unittest.cpp.o  -o bin/bullet_unittest -rdynamic ../src/lib/libgamelib.a mocks/lib/libmock.a lib/gtest/lib/libgtest.a lib/gtest/lib/libgtest_main.a lib/gtest/lib/libgtest.a -lpthread 

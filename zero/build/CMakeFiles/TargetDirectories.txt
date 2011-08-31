@@ -1,0 +1,9 @@
+/home/jackbunny/code/Astraeus/zero/build/tests/CMakeFiles/actor_unittest.dir
+/home/jackbunny/code/Astraeus/zero/build/tests/CMakeFiles/alltests.dir
+/home/jackbunny/code/Astraeus/zero/build/tests/CMakeFiles/bullet_unittest.dir
+/home/jackbunny/code/Astraeus/zero/build/src/CMakeFiles/gamelib.dir
+/home/jackbunny/code/Astraeus/zero/build/tests/lib/gtest/CMakeFiles/gtest.dir
+/home/jackbunny/code/Astraeus/zero/build/tests/lib/gtest/CMakeFiles/gtest_main.dir
+/home/jackbunny/code/Astraeus/zero/build/tests/CMakeFiles/kinematics_unittest.dir
+/home/jackbunny/code/Astraeus/zero/build/tests/mocks/CMakeFiles/mock.dir
+/home/jackbunny/code/Astraeus/zero/build/tests/CMakeFiles/ship_unittest.dir

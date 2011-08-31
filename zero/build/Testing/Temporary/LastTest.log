@@ -1,0 +1,123 @@
+Start testing: Aug 30 23:55 CDT
+----------------------------------------------------------
+1/4 Testing: actor_unittest
+1/4 Test: actor_unittest
+Command: "/home/jackbunny/code/Astraeus/zero/build/tests/bin/actor_unittest"
+Directory: /home/jackbunny/code/Astraeus/zero/build/tests
+"actor_unittest" start time: Aug 30 23:55 CDT
+Output:
+----------------------------------------------------------
+Running main() from gtest_main.cc
+[==========] Running 6 tests from 1 test case.
+[----------] Global test environment set-up.
+[----------] 6 tests from ActorTest
+[ RUN      ] ActorTest.TestRotate
+[       OK ] ActorTest.TestRotate (0 ms)
+[ RUN      ] ActorTest.CanDetectCollision
+[       OK ] ActorTest.CanDetectCollision (0 ms)
+[ RUN      ] ActorTest.CanDetectNoCollision
+[       OK ] ActorTest.CanDetectNoCollision (0 ms)
+[ RUN      ] ActorTest.RotationIsInRange
+[       OK ] ActorTest.RotationIsInRange (0 ms)
+[ RUN      ] ActorTest.RotationOffWorks
+[       OK ] ActorTest.RotationOffWorks (0 ms)
+[ RUN      ] ActorTest.RotationScalesWithTime
+[       OK ] ActorTest.RotationScalesWithTime (0 ms)
+[----------] 6 tests from ActorTest (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 6 tests from 1 test case ran. (1 ms total)
+[  PASSED  ] 6 tests.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"actor_unittest" end time: Aug 30 23:55 CDT
+"actor_unittest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/4 Testing: bullet_unittest
+2/4 Test: bullet_unittest
+Command: "/home/jackbunny/code/Astraeus/zero/build/tests/bin/bullet_unittest"
+Directory: /home/jackbunny/code/Astraeus/zero/build/tests
+"bullet_unittest" start time: Aug 30 23:55 CDT
+Output:
+----------------------------------------------------------
+Running main() from gtest_main.cc
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from BulletTest
+[ RUN      ] BulletTest.ConstructorTest
+[       OK ] BulletTest.ConstructorTest (0 ms)
+[----------] 1 test from BulletTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"bullet_unittest" end time: Aug 30 23:55 CDT
+"bullet_unittest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/4 Testing: kinematics_unittest
+3/4 Test: kinematics_unittest
+Command: "/home/jackbunny/code/Astraeus/zero/build/tests/bin/kinematics_unittest"
+Directory: /home/jackbunny/code/Astraeus/zero/build/tests
+"kinematics_unittest" start time: Aug 30 23:55 CDT
+Output:
+----------------------------------------------------------
+Running main() from gtest_main.cc
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from KinematicsTest
+[ RUN      ] KinematicsTest.TestWithAutomatedData
+[       OK ] KinematicsTest.TestWithAutomatedData (0 ms)
+[----------] 1 test from KinematicsTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"kinematics_unittest" end time: Aug 30 23:55 CDT
+"kinematics_unittest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/4 Testing: ship_unittest
+4/4 Test: ship_unittest
+Command: "/home/jackbunny/code/Astraeus/zero/build/tests/bin/ship_unittest"
+Directory: /home/jackbunny/code/Astraeus/zero/build/tests
+"ship_unittest" start time: Aug 30 23:55 CDT
+Output:
+----------------------------------------------------------
+Running main() from gtest_main.cc
+[==========] Running 4 tests from 1 test case.
+[----------] Global test environment set-up.
+[----------] 4 tests from ShipTest
+[ RUN      ] ShipTest.ConstructorWorks
+[       OK ] ShipTest.ConstructorWorks (0 ms)
+[ RUN      ] ShipTest.ThrustOnMovesShip
+[       OK ] ShipTest.ThrustOnMovesShip (0 ms)
+[ RUN      ] ShipTest.ThrustOffWorks
+[       OK ] ShipTest.ThrustOffWorks (0 ms)
+[ RUN      ] ShipTest.TestFireWeapon
+[       OK ] ShipTest.TestFireWeapon (0 ms)
+[----------] 4 tests from ShipTest (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 4 tests from 1 test case ran. (1 ms total)
+[  PASSED  ] 4 tests.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"ship_unittest" end time: Aug 30 23:55 CDT
+"ship_unittest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Aug 30 23:55 CDT

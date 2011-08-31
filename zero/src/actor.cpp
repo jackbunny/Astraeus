@@ -11,6 +11,7 @@ Actor::Actor() {
    maxSpeed_ = DEFAULT_MAX_SPEED;
    rotationSpeed_ = DEFAULT_ROTATION_SPEED;
    rotationDirection_ = DEFAULT_ROTATION_DIRECTION;
+   rotation_ = DEFAULT_ROTATION;
 }
 
 bool Actor::Intersects(Actor const* actor)
