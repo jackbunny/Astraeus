@@ -109,6 +109,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named detailed_test
+
+# Build rule for target.
+detailed_test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 detailed_test
+.PHONY : detailed_test
+
+# fast build rule for target.
+detailed_test/fast:
+	$(MAKE) -f CMakeFiles/detailed_test.dir/build.make CMakeFiles/detailed_test.dir/build
+.PHONY : detailed_test/fast
+
+#=============================================================================
 # Target rules for targets named gamelib
 
 # Build rule for target.
@@ -135,17 +148,17 @@ actor_unittest/fast:
 .PHONY : actor_unittest/fast
 
 #=============================================================================
-# Target rules for targets named alltests
+# Target rules for targets named actor_unittest_runtest
 
 # Build rule for target.
-alltests: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 alltests
-.PHONY : alltests
+actor_unittest_runtest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 actor_unittest_runtest
+.PHONY : actor_unittest_runtest
 
 # fast build rule for target.
-alltests/fast:
-	$(MAKE) -f tests/CMakeFiles/alltests.dir/build.make tests/CMakeFiles/alltests.dir/build
-.PHONY : alltests/fast
+actor_unittest_runtest/fast:
+	$(MAKE) -f tests/CMakeFiles/actor_unittest_runtest.dir/build.make tests/CMakeFiles/actor_unittest_runtest.dir/build
+.PHONY : actor_unittest_runtest/fast
 
 #=============================================================================
 # Target rules for targets named bullet_unittest
@@ -161,6 +174,19 @@ bullet_unittest/fast:
 .PHONY : bullet_unittest/fast
 
 #=============================================================================
+# Target rules for targets named bullet_unittest_runtest
+
+# Build rule for target.
+bullet_unittest_runtest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 bullet_unittest_runtest
+.PHONY : bullet_unittest_runtest
+
+# fast build rule for target.
+bullet_unittest_runtest/fast:
+	$(MAKE) -f tests/CMakeFiles/bullet_unittest_runtest.dir/build.make tests/CMakeFiles/bullet_unittest_runtest.dir/build
+.PHONY : bullet_unittest_runtest/fast
+
+#=============================================================================
 # Target rules for targets named kinematics_unittest
 
 # Build rule for target.
@@ -174,6 +200,19 @@ kinematics_unittest/fast:
 .PHONY : kinematics_unittest/fast
 
 #=============================================================================
+# Target rules for targets named kinematics_unittest_runtest
+
+# Build rule for target.
+kinematics_unittest_runtest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 kinematics_unittest_runtest
+.PHONY : kinematics_unittest_runtest
+
+# fast build rule for target.
+kinematics_unittest_runtest/fast:
+	$(MAKE) -f tests/CMakeFiles/kinematics_unittest_runtest.dir/build.make tests/CMakeFiles/kinematics_unittest_runtest.dir/build
+.PHONY : kinematics_unittest_runtest/fast
+
+#=============================================================================
 # Target rules for targets named ship_unittest
 
 # Build rule for target.
@@ -185,6 +224,19 @@ ship_unittest: cmake_check_build_system
 ship_unittest/fast:
 	$(MAKE) -f tests/CMakeFiles/ship_unittest.dir/build.make tests/CMakeFiles/ship_unittest.dir/build
 .PHONY : ship_unittest/fast
+
+#=============================================================================
+# Target rules for targets named ship_unittest_runtest
+
+# Build rule for target.
+ship_unittest_runtest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ship_unittest_runtest
+.PHONY : ship_unittest_runtest
+
+# fast build rule for target.
+ship_unittest_runtest/fast:
+	$(MAKE) -f tests/CMakeFiles/ship_unittest_runtest.dir/build.make tests/CMakeFiles/ship_unittest_runtest.dir/build
+.PHONY : ship_unittest_runtest/fast
 
 #=============================================================================
 # Target rules for targets named gtest
@@ -231,15 +283,19 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... detailed_test"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... gamelib"
 	@echo "... actor_unittest"
-	@echo "... alltests"
+	@echo "... actor_unittest_runtest"
 	@echo "... bullet_unittest"
+	@echo "... bullet_unittest_runtest"
 	@echo "... kinematics_unittest"
+	@echo "... kinematics_unittest_runtest"
 	@echo "... ship_unittest"
+	@echo "... ship_unittest_runtest"
 	@echo "... gtest"
 	@echo "... gtest_main"
 	@echo "... mock"

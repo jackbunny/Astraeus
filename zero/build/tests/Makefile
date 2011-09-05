@@ -123,18 +123,18 @@ actor_unittest/fast:
 .PHONY : actor_unittest/fast
 
 # Convenience name for target.
-tests/CMakeFiles/alltests.dir/rule:
-	cd /home/jackbunny/code/Astraeus/zero/build && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/alltests.dir/rule
-.PHONY : tests/CMakeFiles/alltests.dir/rule
+tests/CMakeFiles/actor_unittest_runtest.dir/rule:
+	cd /home/jackbunny/code/Astraeus/zero/build && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/actor_unittest_runtest.dir/rule
+.PHONY : tests/CMakeFiles/actor_unittest_runtest.dir/rule
 
 # Convenience name for target.
-alltests: tests/CMakeFiles/alltests.dir/rule
-.PHONY : alltests
+actor_unittest_runtest: tests/CMakeFiles/actor_unittest_runtest.dir/rule
+.PHONY : actor_unittest_runtest
 
 # fast build rule for target.
-alltests/fast:
-	cd /home/jackbunny/code/Astraeus/zero/build && $(MAKE) -f tests/CMakeFiles/alltests.dir/build.make tests/CMakeFiles/alltests.dir/build
-.PHONY : alltests/fast
+actor_unittest_runtest/fast:
+	cd /home/jackbunny/code/Astraeus/zero/build && $(MAKE) -f tests/CMakeFiles/actor_unittest_runtest.dir/build.make tests/CMakeFiles/actor_unittest_runtest.dir/build
+.PHONY : actor_unittest_runtest/fast
 
 # Convenience name for target.
 tests/CMakeFiles/bullet_unittest.dir/rule:
@@ -151,6 +151,20 @@ bullet_unittest/fast:
 .PHONY : bullet_unittest/fast
 
 # Convenience name for target.
+tests/CMakeFiles/bullet_unittest_runtest.dir/rule:
+	cd /home/jackbunny/code/Astraeus/zero/build && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/bullet_unittest_runtest.dir/rule
+.PHONY : tests/CMakeFiles/bullet_unittest_runtest.dir/rule
+
+# Convenience name for target.
+bullet_unittest_runtest: tests/CMakeFiles/bullet_unittest_runtest.dir/rule
+.PHONY : bullet_unittest_runtest
+
+# fast build rule for target.
+bullet_unittest_runtest/fast:
+	cd /home/jackbunny/code/Astraeus/zero/build && $(MAKE) -f tests/CMakeFiles/bullet_unittest_runtest.dir/build.make tests/CMakeFiles/bullet_unittest_runtest.dir/build
+.PHONY : bullet_unittest_runtest/fast
+
+# Convenience name for target.
 tests/CMakeFiles/kinematics_unittest.dir/rule:
 	cd /home/jackbunny/code/Astraeus/zero/build && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/kinematics_unittest.dir/rule
 .PHONY : tests/CMakeFiles/kinematics_unittest.dir/rule
@@ -165,6 +179,20 @@ kinematics_unittest/fast:
 .PHONY : kinematics_unittest/fast
 
 # Convenience name for target.
+tests/CMakeFiles/kinematics_unittest_runtest.dir/rule:
+	cd /home/jackbunny/code/Astraeus/zero/build && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/kinematics_unittest_runtest.dir/rule
+.PHONY : tests/CMakeFiles/kinematics_unittest_runtest.dir/rule
+
+# Convenience name for target.
+kinematics_unittest_runtest: tests/CMakeFiles/kinematics_unittest_runtest.dir/rule
+.PHONY : kinematics_unittest_runtest
+
+# fast build rule for target.
+kinematics_unittest_runtest/fast:
+	cd /home/jackbunny/code/Astraeus/zero/build && $(MAKE) -f tests/CMakeFiles/kinematics_unittest_runtest.dir/build.make tests/CMakeFiles/kinematics_unittest_runtest.dir/build
+.PHONY : kinematics_unittest_runtest/fast
+
+# Convenience name for target.
 tests/CMakeFiles/ship_unittest.dir/rule:
 	cd /home/jackbunny/code/Astraeus/zero/build && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/ship_unittest.dir/rule
 .PHONY : tests/CMakeFiles/ship_unittest.dir/rule
@@ -177,6 +205,20 @@ ship_unittest: tests/CMakeFiles/ship_unittest.dir/rule
 ship_unittest/fast:
 	cd /home/jackbunny/code/Astraeus/zero/build && $(MAKE) -f tests/CMakeFiles/ship_unittest.dir/build.make tests/CMakeFiles/ship_unittest.dir/build
 .PHONY : ship_unittest/fast
+
+# Convenience name for target.
+tests/CMakeFiles/ship_unittest_runtest.dir/rule:
+	cd /home/jackbunny/code/Astraeus/zero/build && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/ship_unittest_runtest.dir/rule
+.PHONY : tests/CMakeFiles/ship_unittest_runtest.dir/rule
+
+# Convenience name for target.
+ship_unittest_runtest: tests/CMakeFiles/ship_unittest_runtest.dir/rule
+.PHONY : ship_unittest_runtest
+
+# fast build rule for target.
+ship_unittest_runtest/fast:
+	cd /home/jackbunny/code/Astraeus/zero/build && $(MAKE) -f tests/CMakeFiles/ship_unittest_runtest.dir/build.make tests/CMakeFiles/ship_unittest_runtest.dir/build
+.PHONY : ship_unittest_runtest/fast
 
 actor_unittest.o: actor_unittest.cpp.o
 .PHONY : actor_unittest.o
@@ -281,12 +323,15 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... actor_unittest"
-	@echo "... alltests"
+	@echo "... actor_unittest_runtest"
 	@echo "... bullet_unittest"
+	@echo "... bullet_unittest_runtest"
 	@echo "... edit_cache"
 	@echo "... kinematics_unittest"
+	@echo "... kinematics_unittest_runtest"
 	@echo "... rebuild_cache"
 	@echo "... ship_unittest"
+	@echo "... ship_unittest_runtest"
 	@echo "... test"
 	@echo "... actor_unittest.o"
 	@echo "... actor_unittest.i"
