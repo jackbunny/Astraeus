@@ -1,2 +1,0 @@
-/usr/bin/ar cr lib/libgamelib.a  CMakeFiles/gamelib.dir/bullet.cpp.o CMakeFiles/gamelib.dir/actor.cpp.o CMakeFiles/gamelib.dir/kinematics.cpp.o CMakeFiles/gamelib.dir/ship.cpp.o
-/usr/bin/ranlib lib/libgamelib.a

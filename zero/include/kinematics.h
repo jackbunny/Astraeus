@@ -6,6 +6,11 @@
 #include "vector2.h"
 #include <math.h>
 
+enum {
+   ClockWise,
+   CounterClockWise
+} RotationDirection
+
 class Kinematics {
    public:
       static Vector2 CalculateNewVelocity( float rotation,
