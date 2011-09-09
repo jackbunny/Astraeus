@@ -5,13 +5,14 @@
 
 class Asteroid : public Actor
 {
-   public Asteroid( Vector2 position,
+   public:
+      Asteroid( Vector2 position,
                     Vector2 velocity,
                     float rotation,
                     float rotationSpeed,
                     RotationDirection direction );
 
                    
-}
+};
 
 #endif //_ZERO_SRC_ASTEROID_H_

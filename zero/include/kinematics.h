@@ -6,10 +6,10 @@
 #include "vector2.h"
 #include <math.h>
 
-enum {
+enum RotationDirection {
    ClockWise,
    CounterClockWise
-} RotationDirection
+};
 
 class Kinematics {
    public:
