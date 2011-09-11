@@ -19,7 +19,7 @@ TEST( AsteroidTest, DiesOnBulletCollision )
                          rotationDirection);
 
    Bullet testBullet(testPosition, testRotation);
-   CollisionHandler ch();
-   ch.TestAndHandle(testAsteroid, testBullet);
+   CollisionHandler ch;
+   ch.TestAndHandle(&testAsteroid, &testBullet);
    EXPECT_FALSE(testAsteroid.IsAlive());
 }

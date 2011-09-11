@@ -1,8 +1,7 @@
 #pragma once
+#include "actor.h"
 
-class CollisionHandler
-{
+class CollisionHandler {
    public:
-   CollisionHandler();
    void TestAndHandle( Actor* actor1, Actor* actor2 );
 };

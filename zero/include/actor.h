@@ -16,6 +16,7 @@ class Actor {
    public:
    Actor();
    bool Intersects(const Actor* actor);
+   bool IsAlive();
    Vector2 GetPosition() const;
    float GetRotation();
    void RotateLeftOn();

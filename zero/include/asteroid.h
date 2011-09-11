@@ -12,7 +12,6 @@ class Asteroid : public Actor
                     float rotationSpeed,
                     RotationDirection direction );
 
-                   
 };
 
 #endif //_ZERO_SRC_ASTEROID_H_

@@ -19,6 +19,10 @@ bool Actor::Intersects(Actor const* actor)
    return position_ == actor->GetPosition();
 }
 
+bool Actor::IsAlive() {
+   return false;
+}
+
 float Actor::GetRotation() {
    return rotation_;
 }
