@@ -1,0 +1,21 @@
+﻿Build started 10/3/2011 1:06:52 AM.
+     1>Project "C:\Code\Astraeus\point_five\gmock-1.6.0\msvc\2010\gmock.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "C:\Code\Astraeus\point_five\Debug\gmock\gmock.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I..\..\include /I..\.. /I../../gtest/include /Zi /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Code\Astraeus\point_five\Debug\gmock\\" /Fd"C:\Code\Astraeus\point_five\Debug\gmock\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt "..\..\src\gmock-all.cc"
+         gmock-all.cc
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I../../gtest /I..\..\include /I..\.. /I../../gtest/include /Zi /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Code\Astraeus\point_five\Debug\gmock\\" /Fd"C:\Code\Astraeus\point_five\Debug\gmock\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt "../../gtest\src\gtest-all.cc"
+         gtest-all.cc
+       Lib:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\Lib.exe /OUT:"C:\Code\Astraeus\point_five\Debug\gmock.lib" /NOLOGO "C:\Code\Astraeus\point_five\Debug\gmock\gmock-all.obj"
+         "C:\Code\Astraeus\point_five\Debug\gmock\gtest-all.obj"
+         gmock.vcxproj -> C:\Code\Astraeus\point_five\Debug\gmock.lib
+       FinalizeBuildStatus:
+         Deleting file "C:\Code\Astraeus\point_five\Debug\gmock\gmock.unsuccessfulbuild".
+         Touching "C:\Code\Astraeus\point_five\Debug\gmock\gmock.lastbuildstate".
+     1>Done Building Project "C:\Code\Astraeus\point_five\gmock-1.6.0\msvc\2010\gmock.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:04.71

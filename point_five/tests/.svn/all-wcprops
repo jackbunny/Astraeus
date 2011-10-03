@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/jackbunny/TheNebula/svn/!svn/ver/45/astraeus/point_five/trunk/tests
+END
+tests.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/jackbunny/TheNebula/svn/!svn/ver/45/astraeus/point_five/trunk/tests/tests.cpp
+END
+tests.vcxproj.filters
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/jackbunny/TheNebula/svn/!svn/ver/45/astraeus/point_five/trunk/tests/tests.vcxproj.filters
+END
+kinematics_unittest.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/jackbunny/TheNebula/svn/!svn/ver/45/astraeus/point_five/trunk/tests/kinematics_unittest.cpp
+END
+kinematicsdata.csv
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/jackbunny/TheNebula/svn/!svn/ver/45/astraeus/point_five/trunk/tests/kinematicsdata.csv
+END
+tests.vcxproj
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/jackbunny/TheNebula/svn/!svn/ver/45/astraeus/point_five/trunk/tests/tests.vcxproj
+END

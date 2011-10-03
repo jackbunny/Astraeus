@@ -1,0 +1,2 @@
+/home/jackbunny/code/tools/gtest/CMakeFiles/gtest.dir
+/home/jackbunny/code/tools/gtest/CMakeFiles/gtest_main.dir
